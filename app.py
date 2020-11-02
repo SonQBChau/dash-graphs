@@ -16,7 +16,7 @@ from dash_html_components import Div, Img, Button, H2, H1, P, Hr, A, Span, Label
 from wordcloud_template import make_word_cloud
 import requests
 from urllib.request import urlopen
-
+import os
 
 EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
@@ -29,7 +29,8 @@ EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 # it works better for scatter location like city
 # but for the sake of demo a state, we will use random city location in state
 df = pd.read_csv('https://raw.githubusercontent.com/SonQBChau/JSON/main/map.csv')
-mapbox_access_token = open("./mapbox_token").read()
+# mapbox_access_token = open("./mapbox_token").read()
+mapbox_access_token  = os.environ['S3_SECRET']
 
 map_fig = go.Figure()
 for  row in df.itertuples():
