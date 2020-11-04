@@ -29,8 +29,8 @@ EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 # it works better for scatter location like city
 # but for the sake of demo a state, we will use random city location in state
 df = pd.read_csv('https://raw.githubusercontent.com/SonQBChau/JSON/main/map.csv')
-mapbox_access_token = open("./mapbox_token").read()
-# mapbox_access_token  = os.environ['MAPBOX_TOKEN']
+# mapbox_access_token = open("./mapbox_token").read()
+mapbox_access_token  = os.environ['MAPBOX_TOKEN']
 
 map_fig = go.Figure()
 for  row in df.itertuples():
