@@ -40,7 +40,7 @@ for  row in df.itertuples():
         mode='markers',
         text = "{} <br> {}".format (row.name , row.count),
         marker=go.scattermapbox.Marker(
-            size= int(row.count/20),
+            size= int(row.count/2),
             opacity=0.7
         ),
     )
