@@ -45,8 +45,6 @@ for  row in df.itertuples():
         ),
     )
     )
- 
-
 map_fig.update_layout(
     autosize=True,
     hovermode='closest',
@@ -86,6 +84,7 @@ map_fig.update_layout(
 
 
 df = pd.read_csv('https://raw.githubusercontent.com/SonQBChau/JSON/main/bar_chart.json')
+
 bar_fig = px.bar(df, x="name", y="count", color="type", barmode="group")
 
 #####################################
@@ -93,6 +92,7 @@ bar_fig = px.bar(df, x="name", y="count", color="type", barmode="group")
 #####################################
 # mostly just need 3 variables: x and y and size (and color)
 df = pd.read_csv('https://raw.githubusercontent.com/SonQBChau/JSON/main/scatter_plot.json')
+
 scatter_fig = px.scatter(df, x="name", y="size", size='count',color="job",)
  
 
@@ -103,6 +103,7 @@ scatter_fig = px.scatter(df, x="name", y="size", size='count',color="job",)
 # sunbrust is good for group and subgroup
 # for example, we can have machine learning include all the language inside it
 df = pd.read_csv('https://raw.githubusercontent.com/SonQBChau/JSON/main/sunburst.json')
+
 sunburst_fig = px.sunburst(df, path=['job', 'name'], values='count')
 
 
